@@ -1,6 +1,7 @@
 # n8n-rss-to-sheets-automation
 Automated content curation pipeline built with n8n - continuously monitors a Medium RSS feed and archives new articles into Google Sheets, eliminating manual tracking.
 <div align="center">
+<div align="center">
 
 # Reading List Automation
 
@@ -14,45 +15,32 @@ Automated content curation pipeline built with n8n - continuously monitors a Med
 
 ## Overview
 
-Manually checking a favorite publication for new posts is a small task 
-that quietly wastes time. This workflow removes it entirely — it listens 
-for new Medium articles the moment they're published, extracts what 
-matters, and archives it into a growing spreadsheet automatically.
+Manually checking a favorite publication for new posts is a small task that quietly wastes time. This workflow removes it entirely — it listens for new Medium articles the moment they're published, extracts what matters, and archives it into a growing spreadsheet automatically.
 
-> **No manual checking. No copy-pasting. Just a living reading list.**
-> 
+> No manual checking. No copy-pasting. Just a living reading list.
+
 ## How It Works
 
-<div align="center">
-
-┌──────────────────┐      ┌──────────────────┐      ┌──────────────────────┐
-│  RSS Feed Trigger │ ───▶ │   Edit Fields     │ ───▶ │  Google Sheets        │
-│  listens for new  │      │  extracts title,  │      │  appends new row      │
-│  articles          │      │  link & date      │      │  to the archive       │
-└──────────────────┘      └──────────────────┘      └──────────────────────┘
+```
+RSS Feed Trigger  →  Edit Fields  →  Google Sheets (Append Row)
+   (listen)          (transform)         (persist)
 ```
 
-</div>
-
 | Stage | Node | Role |
-|:---:|---|---|
+|---|---|---|
 | 🎯 | **RSS Feed Trigger** | Polls the Medium feed on a fixed interval |
-| 🧹 | **Edit Fields** | Cleans the payload → `title`, `link`, `date` |
+| 🧹 | **Edit Fields** | Cleans the payload into `title`, `link`, `date` |
 | 💾 | **Google Sheets** | Appends a new row — the archive builds itself |
 
 ## In Action
 
-<div align="center">
-
 **The complete pipeline, verified end-to-end**
-<img src="screenshots/workflow.png" width="700"/>
 
-<br/>
+![Workflow](workflow.png)
 
 **Articles landing automatically in the sheet**
-<img src="screenshots/sheets-result.png" width="500"/>
 
-</div>
+![Sheet Result](reading%20list%20sheets.png)
 
 ## Stack
 
@@ -62,23 +50,19 @@ matters, and archives it into a growing spreadsheet automatically.
 
 ## 🚀 Getting Started
 
-```bash
-1. Import workflow.json into your n8n instance
-   → "..." menu → Import from File
+1. Import `Reading List Otomatis Medium.json` into your n8n instance (`...` menu → Import from File)
 2. Set the RSS Feed Trigger's Feed URL
-3. Connect your Google account → pick a target spreadsheet
-4. Activate → new articles start flowing in automatically
-```
+3. Connect your Google account and select a target spreadsheet
+4. Activate the workflow — new articles start flowing in automatically
 
-## 💡 Why This Matters
+## Why This Matters
 
-This is a small project, but it demonstrates a pattern used everywhere 
-in real automation systems: **trigger → transform → persist**. The same 
-three-step logic scales to notifications, data pipelines, CRM syncs, 
-and beyond — RSS is just the friendliest place to start.
+This is a small project, but it demonstrates a pattern used everywhere in real automation systems: **trigger → transform → persist**. The same three-step logic scales to notifications, data pipelines, CRM syncs, and beyond — RSS is just the friendliest place to start.
+
+---
 
 <div align="center">
 
-*Built while exploring workflow automation with n8n* 🛠️
+*Built while exploring workflow automation with n8n*
 
 </div>
