@@ -5,7 +5,7 @@ Automated content curation pipeline built with n8n - continuously monitors a Med
 
 # Reading List Automation
 
-### *Turning a RSS feed into a self-updating archive — zero manual effort.*
+### *Turning a RSS feed into a self-updating archive - zero manual effort.*
 
 ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)
 ![Google Sheets](https://img.shields.io/badge/Google_Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white)
@@ -53,7 +53,7 @@ RSS Feed Trigger  →  Edit Fields  →  Google Sheets (Append Row)
 1. Import `Reading List Otomatis Medium.json` into your n8n instance (`...` menu → Import from File)
 2. Set the RSS Feed Trigger's Feed URL
 3. Connect your Google account and select a target spreadsheet
-4. Activate the workflow — new articles start flowing in automatically
+4. Activate the workflow - new articles start flowing in automatically
 
 ## Why This Matters
 
